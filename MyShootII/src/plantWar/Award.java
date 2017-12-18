@@ -14,4 +14,3 @@ public interface Award {
 	public int getType();
 
 }
-

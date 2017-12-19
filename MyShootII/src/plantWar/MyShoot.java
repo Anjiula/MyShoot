@@ -396,7 +396,6 @@ public class MyShoot extends JPanel {
 				case STSRT:
 					state = RUNNING;
 					break;
-
 				case GAME_OVER:
 					//所有数据归0
 					score = 0;

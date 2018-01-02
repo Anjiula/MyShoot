@@ -10,18 +10,18 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /*
- * Íê³ÉµÄ¹¦ÄÜ£ºÌí¼ÓÖØ¿ªÒ»¾Ö
+ * ï¿½ï¿½ÉµÄ¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½Ø¿ï¿½Ò»ï¿½ï¿½
  * */
 
 public class SnakeFrame extends Frame{
-	//·½¸ñµÄ¿í¶ÈºÍ³¤¶È
+	//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ÈºÍ³ï¿½ï¿½ï¿½
 	public static final int BLOCK_WIDTH = 15 ;
 	public static final int BLOCK_HEIGHT = 15 ;
-	//½çÃæµÄ·½¸ñµÄÐÐÊýºÍÁÐÊý
+	//ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static final int ROW = 40;
 	public static final int COL = 40;
 	
-	//µÃ·Ö
+	//ï¿½Ã·ï¿½
 	private int score = 0;
 	
 	
@@ -32,7 +32,7 @@ public class SnakeFrame extends Frame{
 	public void setScore(int score) {
 		this.score = score;
 	}
-	//»­Í¼µÄÏß³Ì¶ÔÏó
+	//ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ß³Ì¶ï¿½ï¿½ï¿½
 	private MyPaintThread paintThread = new MyPaintThread();
 
 	private Image offScreenImage = null;
@@ -65,7 +65,7 @@ public class SnakeFrame extends Frame{
 		this.setResizable(false);
 		this.setVisible(true);
 		
-		//Îª½çÃæÌí¼Ó¼àÌýÊÂ¼þ
+		//Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		this.addKeyListener(new KeyMonitor());
 		
 		new Thread(paintThread).start();
@@ -79,7 +79,7 @@ public class SnakeFrame extends Frame{
 	}
 	
 	/*
-	 * ÖØÐ´update·½·¨
+	 * ï¿½ï¿½Ð´updateï¿½ï¿½ï¿½ï¿½
 	 * */
 	@Override
 	public void update(Graphics g) {
@@ -87,19 +87,19 @@ public class SnakeFrame extends Frame{
 			offScreenImage = this.createImage(ROW*BLOCK_HEIGHT, COL*BLOCK_WIDTH);
 		}
 		Graphics offg = offScreenImage.getGraphics();
-		//ÏÈ½«ÄÚÈÝ»­ÔÚÐéÄâ»­²¼ÉÏ
+		//ï¿½È½ï¿½ï¿½ï¿½ï¿½Ý»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â»­ï¿½ï¿½ï¿½ï¿½
 		paint(offg);
-		//È»ºó½«ÐéÄâ»­²¼ÉÏµÄÄÚÈÝÒ»Æð»­ÔÚ»­²¼ÉÏ
+		//È»ï¿½ï¿½ï¿½ï¿½ï¿½â»­ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½
 		g.drawImage(offScreenImage, 0, 0, null);
 		
 		if(b_gameOver){
-			g.drawString("ÓÎÏ·½áÊø£¡£¡£¡", ROW/2*BLOCK_HEIGHT, COL/2*BLOCK_WIDTH);
+			g.drawString("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", ROW/2*BLOCK_HEIGHT, COL/2*BLOCK_WIDTH);
 			paintThread.dead();
 		}
 		
 		snake.draw(g);
 		boolean b_Success=snake.eatEgg(egg);
-		//³ÔÒ»¸ö¼Ó5·Ö
+		//ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½
 		if(b_Success){
 			score+=5;
 		}
@@ -109,13 +109,13 @@ public class SnakeFrame extends Frame{
 		
 	}
 	/*
-	 * º¯Êý¹¦ÄÜ£ºÔÚ½çÃæÉÏÏÔÊ¾Ò»Ð©ÌáÊ¾ÐÅÏ¢
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Ò»Ð©ï¿½ï¿½Ê¾ï¿½ï¿½Ï¢
 	 * */
 	public void displaySomeInfor(Graphics g){
 		Color c = g.getColor();
 		g.setColor(Color.RED);
-		g.drawString("Ê¹ÓÃËµÃ÷:¿Õ¸ñ¼ü---ÔÝÍ££¬°´¼üB---ÔÝÍ£ºó¿ªÊ¼,F2---ÖØÐÂ¿ªÊ¼", 5*BLOCK_HEIGHT, 3*BLOCK_WIDTH);
-		g.drawString("µÃ·Ö:"+score, 5*BLOCK_HEIGHT, 5*BLOCK_WIDTH);		
+		g.drawString("Ê¹ï¿½ï¿½Ëµï¿½ï¿½:ï¿½Õ¸ï¿½ï¿½---ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B---ï¿½ï¿½Í£ï¿½ï¿½Ê¼,F2---ï¿½ï¿½ï¿½Â¿ï¿½Ê¼", 5*BLOCK_HEIGHT, 3*BLOCK_WIDTH);
+		g.drawString("ï¿½Ã·ï¿½:"+score, 5*BLOCK_HEIGHT, 5*BLOCK_WIDTH);		
 		g.setColor(c);
 		
 	}
@@ -125,7 +125,7 @@ public class SnakeFrame extends Frame{
 		Color c = g.getColor();
 		g.setColor(Color.GRAY);
 		/*
-		 * ½«½çÃæ»­³ÉÓÉROW*COLµÄ·½¸ñ¹¹³É,Á½¸öforÑ­»·¼´¿É½â¾ö
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½æ»­ï¿½ï¿½ï¿½ï¿½ROW*COLï¿½Ä·ï¿½ï¿½ñ¹¹³ï¿½,ï¿½ï¿½ï¿½ï¿½forÑ­ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½
 		 * */
 		for(int i = 0;i<ROW;i++){
 			g.drawLine(0, i*BLOCK_HEIGHT, COL*BLOCK_WIDTH,i*BLOCK_HEIGHT );
@@ -139,16 +139,16 @@ public class SnakeFrame extends Frame{
 	
 	
 	/*
-	 * ÖØ»­Ïß³ÌÀà
+	 * ï¿½Ø»ï¿½ï¿½ß³ï¿½ï¿½ï¿½
 	 * */
 	private class MyPaintThread implements Runnable{
-		//running²»ÄÜ¸Ä±ä£¬¸Ä±äºó´ËÏß³Ì¾Í½áÊøÁË
+		//runningï¿½ï¿½ï¿½Ü¸Ä±ä£¬ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ß³Ì¾Í½ï¿½ï¿½ï¿½ï¿½ï¿½
 		private static final boolean  running = true;
 		private boolean  pause = false;
 		@Override
 		public void run() {
 			while(running){
-				//Èç¹ûpause Îªtrue £¬ÔòÔÝÍ£
+				//ï¿½ï¿½ï¿½pause Îªtrue ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£
 				if(pause){
 					continue;
 				}
@@ -163,33 +163,32 @@ public class SnakeFrame extends Frame{
 		}
 		
 		/*
-		 * º¯Êý¹¦ÄÜ£ºÔÝÍ£
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½Í£
 		 * */
 		public void pause(){
 			pause = true;
 		}
 		/*
-		 * ´ÓÔÝÍ£ÖÐ»Ö¸´
+		 * ï¿½ï¿½ï¿½ï¿½Í£ï¿½Ð»Ö¸ï¿½
 		 * */
 		public void recover(){
 			pause = false;
 		}
 		/*
-		 * ÓÎÏ·½áÊø£¬ËÀÍö,Ö»ÄÜÉèÖÃpause Îªtrue£¬²»ÄÜÉèÖÃrunning = false£¬ÕâÑù¾Íµ¼ÖÂÖØ»­µÄÏß³Ì½áÊøÁË;
-		 * ·ñÔò²»ÄÜÖØÐÂ¿ªÊ¼
+		 * ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pause Îªtrueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½running = falseï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ß³Ì½ï¿½ï¿½ï¿½ï¿½ï¿½;
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½Ê¼
 		 * */
 		public void dead(){
 			pause = true;
 		}
 		
 		/*
-		 * º¯Êý¹¦ÄÜ£ºÖØÐÂ¿ªÊ¼Ò»¾Ö
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Â¿ï¿½Ê¼Ò»ï¿½ï¿½
 		 * */
 		public void reStart(){
 			sf.b_gameOver = false;
 			this.pause = false;
 			snake = new Snake(sf);
-	
 		}
 		
 	}
@@ -202,16 +201,16 @@ public class SnakeFrame extends Frame{
 			if(key == KeyEvent.VK_SPACE){
 				paintThread.pause();
 			}
-			else if(key == KeyEvent.VK_B){//¿ªÊ¼
+			else if(key == KeyEvent.VK_B){//ï¿½ï¿½Ê¼
 				paintThread.recover();
 			}
-			else if(key == KeyEvent.VK_F2){//ÔÙ¿ªÒ»¾Ö
+			else if(key == KeyEvent.VK_F2){//ï¿½Ù¿ï¿½Ò»ï¿½ï¿½
 				paintThread.reStart();
 			}
 			else{
 				snake.keyPressed(e);
 			}			
-		}
+		}   
 		
 	}
 	

@@ -22,6 +22,10 @@ import javax.swing.JPanel;
  * @author b_anhr
  *
  */
+/**
+ * @author b_anhr
+ *
+ */
 public class MyShoot extends JPanel {
 	
 	//test_初始化值
@@ -149,8 +153,9 @@ public class MyShoot extends JPanel {
 		paintState(g);
 	}
 	
+	
 	/**
-	 * 移动一步
+	 * 走一步
 	 */
 	public void step() {
 		//间隔20ms走一次

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenCheckoutLocationPage">
+		<list key="scmUrl">
+			<item value="scm:svn:http://svnhost/svn/15vD503DDNZL-DYZJ/trunk/dyzj"/>
+			<item value="scm:svn:https://139.196.46.71/svn/PjMgr/配网10kV出线开关故障统计/1 Dev/03code"/>
+			<item value="scm:svn:https://139.196.46.71/svn/pjMgr/供电服务指挥平台/1 Dev/03code"/>
+			<item value="scm:svn:https://172.16.50.74/svn/PjMgr/特高压中心精益化管控平台/1 Dev/03code/exam"/>
+			<item value="scm:svn:https://172.16.50.74/svn/PjMgr/特高压中心精益化管控平台/1 Dev/03code/tgy(2013.8.1)/tgy"/>
+			<item value="scm:svn:https://172.16.50.74/svn/PjMgr/全光纤电流互感器智能感知系统/1 Dev/03code/gct"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+</section>

@@ -1,6 +1,0 @@
-svn地址: https://139.196.46.71/svn/pjMgr/电网谐波数据状态分析/1 Dev/03code
-DB：172.16.51.228
-	1521
-	orcl
-DB用户名密码：newdwxb    newdwxb123
-页面访问地址：http://localhost:8080/dwxb/fxfxgl/qyfxndfx/list

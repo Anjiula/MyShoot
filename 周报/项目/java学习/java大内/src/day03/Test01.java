@@ -19,11 +19,20 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
  * 
  * 
  * 小结：
+ * 
+ * 
  * string按指定日期格式转化为date				sdf.parse(string)
  * long型的毫秒数转化为date					new date(long ms)
  * 
  * date转为long型的毫秒数						date.getTime()
  * date转化为指定日期格式String				sdf.format(date)
+ * 
+ * calendar  ->  date				calendar.getTime()
+ * date  ->   calendar				calendar.setTime(date)
+ * 
+ * 
+ * calendar计算时间差   			Calendar.getTimeInMillis() 
+ * 
  * 
  * @author b_anhr
  *

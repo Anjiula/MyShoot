@@ -9,6 +9,10 @@ import java.util.Date;
  * 
  * 日历类 抽象类 封装了对日期的相关操作 比如计算时间
  * 
+ * 
+ * calendar  ->  date				calendar.getTime()
+ * date  ->   calendar				calendar.setTime(date)
+ * 
  * @author b_anhr
  *
  */

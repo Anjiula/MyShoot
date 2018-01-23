@@ -18,10 +18,16 @@ import java.util.List;
  *
  */
 public class CalendarDemo2 {
-
-	public static void main(String[] args) {
-		
-		List<String> monthList = new ArrayList<String>();
+	
+	//实例化该对象时，会想走构造函数，若没有，就使用初始值。
+	//定义静态成员
+	
+	public static final List<String> monthList = new ArrayList<String>();
+	public static final List<String> weekList = new ArrayList<String>();
+	
+	static{
+		//静态就是指在编译后所分配的内存会一直存在，直到程序退出内存才会释放这个空间
+		//静态成员赋值
 		monthList.add("1月");
 		monthList.add("2月");
 		monthList.add("3月");
@@ -35,8 +41,6 @@ public class CalendarDemo2 {
 		monthList.add("11月");
 		monthList.add("12月");
 		
-		
-		List<String> weekList = new ArrayList<String>();
 		weekList.add("周日");
 		weekList.add("周一");
 		weekList.add("周二");
@@ -44,6 +48,10 @@ public class CalendarDemo2 {
 		weekList.add("周四");
 		weekList.add("周五");
 		weekList.add("周六");
+	}
+
+	public static void main(String[] args) {
+		
 		
 		//1、实例化
 		Calendar calendar = Calendar.getInstance();

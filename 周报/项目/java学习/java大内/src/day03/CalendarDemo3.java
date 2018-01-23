@@ -23,7 +23,6 @@ public class CalendarDemo3 {
 		calendar.add(Calendar.YEAR, 3);
 		System.out.println(calendar.getTime());
 		
-		
 		//DAY_OF_YEAR   可能跨年
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		System.out.println(calendar.getTime());

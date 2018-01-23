@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * arraylist  查询更快，数组实现
  * linkedlist 增删更快，链表实现（收尾增删效果明显）
+ * 
+ * 删除元素最好使用迭代器
+ * 
  * @author b_anhr
  *
  */

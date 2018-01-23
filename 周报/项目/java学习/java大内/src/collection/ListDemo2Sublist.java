@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * 取子集
  * list subList(int start,int end)
+ * 
  * 获取当前集合中指定范围的子集，含头不含尾
  * 
  * 对子集（sublist）的修改，就是修改原集合相应的内容

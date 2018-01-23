@@ -1,5 +1,7 @@
 package collection;
-
+/**
+ * 泛型本质
+ */
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

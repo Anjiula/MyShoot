@@ -18,7 +18,7 @@ import java.util.Iterator;
  * 
  * java.util.Iterator  是个接口     不同 的集合提供了相应的实现类
  * 
- * 遍历集合：问、取、（删）步骤
+ * 遍历集合：问、取、（删）步骤			it.hasNext()
  * 
  * @author b_anhr
  *

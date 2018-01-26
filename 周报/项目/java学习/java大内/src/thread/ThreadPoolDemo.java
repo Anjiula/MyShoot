@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  * 线程池中的线程都是前端线程,会缓存,没任务,不会停掉,进程不会停掉         需要手动停掉(shoutdown/shoutdownnow)
  * 
  * threadpool.execute(run实例)
-
+ * 
  * 两种结束线程方式
  * 
  * 

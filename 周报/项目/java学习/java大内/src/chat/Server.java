@@ -39,8 +39,7 @@ public class Server {
 				thread.start();
 				
 			}
-			
-		} catch (Exception e) {
+		} catch (Exception e) {	
 			e.printStackTrace();
 		}
 	}
@@ -82,6 +81,5 @@ class ClientHandler implements Runnable{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

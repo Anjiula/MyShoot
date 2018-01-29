@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 /**
  * 模拟另一个客户端   去连接server
@@ -41,18 +42,25 @@ public class ClientClone {
 	public void start() {
 		
 		try {
+//			//字节流,通过字节流传输
 //			OutputStream outputStream = socket.getOutputStream();
-//			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
-//			PrintWriter printWriter = new PrintWriter(outputStream,true);
-//			printWriter.println("1231231123");
+//			//转换流
+//			OutputStreamWriter ouWriter = new OutputStreamWriter(outputStream, "UTF-8");
+//			//字符流(自动刷新true)
+//			PrintWriter printWriter = new PrintWriter(ouWriter,true);
+//			printWriter.println("服务器");
+			
 			//字节流,通过字节流传输
 			OutputStream outputStream = socket.getOutputStream();
 			//转换流
 			OutputStreamWriter ouWriter = new OutputStreamWriter(outputStream, "UTF-8");
 			//字符流(自动刷新true)
 			PrintWriter printWriter = new PrintWriter(ouWriter,true);
-			
-			printWriter.println("服务器");
+			while (true) {
+				Scanner scanner = new Scanner(System.in);
+				String string = scanner.nextLine();
+				printWriter.println(string);
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

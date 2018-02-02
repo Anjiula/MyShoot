@@ -24,7 +24,7 @@ public class InsertJDMBC {
 			/*
 			 * 2,连数据库  (创建connection对象)
 			 */
-			Connection connection = DriverManager.getConnection("jdbc:oracle:thin:172.16.51.88:1521:orcl", "system", "Sun.japan");
+			Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@172.16.51.88:1521:orcl", "system", "Sun.japan");
 			
 			System.out.println("success");
 			

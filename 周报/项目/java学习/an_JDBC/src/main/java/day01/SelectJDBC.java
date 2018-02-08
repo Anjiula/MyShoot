@@ -43,6 +43,7 @@ public class SelectJDBC {
 
 	public static void main(String[] args) {
 		
+		Connection connection = dbUtil2.getConnection();
 		try {
 			//1,注册驱动
 //			Class.forName("oracle.jdbc.OracleDriver");
@@ -50,7 +51,6 @@ public class SelectJDBC {
 //			//2,连接数据库
 //			Connection connection = DriverManager.getConnection("jdbc:oracle:thin:172.16.51.88:1521:orcl", "system", "Sun.japan");
 			
-			Connection connection = dbUtil2.getConnection();
 			
 			//3,创建statemen
 			Statement statement = connection.createStatement();
@@ -66,7 +66,8 @@ public class SelectJDBC {
 				String ssexString = resultSet.getString("SSEX");
 				String sbirthdayString = resultSet.getString("SBIRTHDAY");
 				String classString = resultSet.getString("CLASS");
-				System.out.println("SNO :" + sno + " SNAME :" +snameString + " SSEX :" + ssexString + " SBITTHDAY :" + sbirthdayString + " CLASS :" + classString);
+				int monery = resultSet.getInt("MONERY");
+				System.out.println("SNO :" + sno + " SNAME :" +snameString + " SSEX :" + ssexString + " SBITTHDAY :" + sbirthdayString + " CLASS :" + classString + " MONERY : " + monery);
 			}
 			/**
 			 * 两个close()方法,再关闭数据库,两个会自动关闭
@@ -75,20 +76,17 @@ public class SelectJDBC {
 			 */
 			resultSet.close();
 			statement.close();
-			
 			//6,关闭数据库
 //			connection.close();
 			
-			//工作中应当这样关闭数据库
-			try {
-				dbUtil2.close(connection);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally{
+			System.out.println("guabbi");
+			dbUtil2.close(connection);
 		}
 
 	}

@@ -24,7 +24,6 @@ public class IntegerDemo5 {
 		Integer integer = 123;
 		
 		
-		
 		System.out.println(i + "," + integer);
 
 	}

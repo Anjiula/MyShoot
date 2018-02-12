@@ -1,5 +1,11 @@
 package preparedStatement;
-
+/**
+ * 
+ * getgeneratedkeys()   略
+ * 
+ * 分页查询     preparestatement     select  where .. between ? and ?
+ * 
+ */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -11,7 +17,7 @@ import day01.dbUtil3;
  * addBatch()
  * clear()
  * 
- * 批量参数处理
+ * 批量参数处理    	批量执行sql    分批执行
  * 
  * @author b_anhr
  *
@@ -46,19 +52,24 @@ public class Batch {
 				//加入缓存区
 				pStatement.addBatch();
 				
-				pStatement.executeBatch();
-				
-				System.out.println("wancheng ");
-				connection.commit();
+				//可以分批执行
+				if (i%10 == 0) {
+					//执行
+					pStatement.executeBatch();
+					pStatement.clearBatch();
+					System.out.println("wancheng" + i);
+				}
 			}
-			pStatement.executeQuery();
+			//这里处理分批执行时剩在缓存区的一些sql
+			pStatement.executeBatch();
+			//手动提交
+			connection.commit();
 		} catch (Exception e) {
-			dbUtil3.rollBack(connection);
 			e.printStackTrace();
+			dbUtil3.rollBack(connection);
 		} finally {
 			dbUtil3.close(connection);
 		}
-
 	}
 
 }
